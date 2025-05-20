@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Viewer cho BASE Mainnet</title>
+    <!-- Thêm Bootstrap CSS để có giao diện đẹp và thân thiện -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">NFT Viewer cho BASE Mainnet</h1>
+        
+        <!-- Phần nhập địa chỉ ví -->
+        <div class="card p-4 mb-4">
+            <h5 class="card-title">Nhập địa chỉ ví của bạn</h5>
+            <div class="input-group mb-3">
+                <input type="text" id="walletAddress" class="form-control" placeholder="Ví dụ: 0x1234...">
+                <button class="btn btn-primary" id="searchButton">Tìm NFT</button>
+            </div>
+            <div id="errorMessage" class="text-danger"></div>
+        </div>
+
+        <!-- Phần hiển thị kết quả -->
+        <div id="loadingSpinner" class="text-center d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Đang tải...</span>
+            </div>
+        </div>
+
+        <div id="nftContainer" class="row g-4">
+            <!-- NFTs sẽ được hiển thị ở đây -->
+        </div>
+
+        <!-- Phần hướng dẫn sử dụng -->
+        <div class="card mt-4 p-3">
+            <h5 class="card-title">Hướng dẫn sử dụng</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">1. Nhập địa chỉ ví BASE của bạn vào ô trên</li>
+                <li class="list-group-item">2. Nhấn nút "Tìm NFT" để xem danh sách NFT</li>
+                <li class="list-group-item">3. Đợi một chút để hệ thống tải thông tin NFT</li>
+                <li class="list-group-item">4. Xem thông tin chi tiết của từng NFT hiển thị</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Thêm các thư viện cần thiết -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/ethers/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
